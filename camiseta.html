@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camiseta | AMS Magnus</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&display=swap">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="wrap nav">
+            <a href="index.html" class="marca"><img src="logo.png" alt="AMS Magnus"></a>
+            <button id="btn-menu" class="btn-menu" aria-expanded="false" aria-controls="panel">Menú</button>
+        </div>
+    </header>
+
+    <!-- ===== DETALLE (lo llena catalogo.js según ?id=...) ===== -->
+    <main class="coleccion pagina-modelos">
+        <div class="wrap">
+            <a href="modelos.html" class="volver">Ver todos los modelos</a>
+            <div id="detalle"></div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 AMS Magnus. Guayaquil, Ecuador.</p>
+    </footer>
+
+    <!-- ===== PANEL DE MENÚ ===== -->
+    <div id="panel-fondo" class="panel-fondo"></div>
+
+    <aside id="panel" class="panel" aria-label="Menú principal">
+        <div class="panel-cabecera">
+            <strong>AMS Magnus</strong>
+            <button id="cerrar-panel" class="cerrar" aria-label="Cerrar menú">&times;</button>
+        </div>
+
+        <nav class="panel-menu">
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#coleccion">Colección</a>
+            <a href="index.html#personalizadas">Personalizadas</a>
+        </nav>
+
+        <h3>Catálogo</h3>
+        <nav class="panel-catalogo" id="panel-catalogo"></nav>
+
+        <a href="modelos.html" class="btn panel-vermas">Ver más modelos</a>
+        <a href="https://wa.me/593979187799?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20las%20camisetas" class="btn panel-wsp">Escríbenos</a>
+    </aside>
+
+    <script src="catalogo.js"></script>
+    <script src="java.js"></script>
+</body>
+</html>

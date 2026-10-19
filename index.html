@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMS Magnus | El Magnifico Mundo Urbano</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&display=swap">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+ 
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="wrap nav">
+    <a href="#inicio" class="marca">
+    <img src="BCO.b46b9cf1-3816-4291-b8f0-03fa58657115.png" alt="AMS Magnus">
+    </a>
+            <button id="btn-menu" class="btn-menu" aria-expanded="false" aria-controls="panel">Menú</button>
+        </div>
+    </header>
+ 
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero">
+        <div class="wrap">
+            <h1>AMS<br>Magnus</h1>
+            <div class="hero-fila">
+                <p>Camisetas Urbanas con diseños propios. Hechas en Guayaquil, estampadas para que nadie más tenga la tuya.</p>
+                <a href="#coleccion" class="btn">Ver camisetas</a>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- ===== COLECCIÓN ===== -->
+    <!-- PENDIENTE: reemplaza cada .camiseta por <img src="foto.jpg"> con fotos reales -->
+    <section id="coleccion" class="coleccion">
+        <div class="wrap">
+            <h2>Lo que ya salió</h2>
+            <div class="grid" id="grid-coleccion"></div>
+        </div>
+    </section>
+ 
+    <!-- ===== PERSONALIZADAS ===== -->
+    <section id="personalizadas" class="custom">
+        <div class="wrap custom-flex">
+            <div>
+                <h2>¿Tienes tu propio diseño?</h2>
+                <p>Estampamos tu idea en una camiseta. Desde una sola pieza hasta pedidos para tu grupo, equipo o negocio.</p>
+                <a href="https://wa.me/593979187799?text=Hola%2C%20quiero%20una%20camiseta%20personalizada" class="btn">Cuéntanos tu idea</a>
+            </div>
+            <ol>
+                <li>Nos mandas tu diseño o una idea por WhatsApp</li>
+                <li>Te enseñamos cómo quedaría antes de imprimir</li>
+                <li>Estampamos y te la entregamos en pocos días</li>
+            </ol>
+        </div>
+    </section>
+ 
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 AMS Magnus. Guayaquil, Ecuador. <a href="https://wa.me/593979187799">WhatsApp</a></p>
+    </footer>
+ <div id="panel-fondo" class="panel-fondo"></div>
+
+<aside id="panel" class="panel" aria-label="Menú principal">
+    <div class="panel-cabecera">
+        <strong>AMS Magnus</strong>
+        <button id="cerrar-panel" class="cerrar" aria-label="Cerrar menú">&times;</button>
+    </div>
+
+    <nav class="panel-menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#coleccion">Colección</a>
+        <a href="#personalizadas">Personalizadas</a>
+    </nav>
+
+    <h3>Catálogo</h3>
+    <nav class="panel-catalogo" id="panel-catalogo"></nav>
+
+    <a href="modelos.html" class="btn panel-vermas">Ver más modelos</a>
+    <a href="https://wa.me/593979187799?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20las%20camisetas" class="btn panel-wsp">Escríbenos</a>
+</aside>
+
+<script src="catalogo.js"></script>
+<script src="java.js"></script>
+</body>
+</html>

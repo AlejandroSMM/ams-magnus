@@ -1,0 +1,235 @@
+/* ---------- 1. VARIABLES (cambia aquí los colores de tu marca) ---------- */
+:root {
+    --concreto: #2f2f2f;
+    --tinta: #c63033;
+    --gray: #ffffff;
+    --blanco: #f7f6f2;
+    --rojo: #c63033;
+    --fuente: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+}
+ 
+/* ---------- 2. BASE ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+body {
+    font-family: var(--fuente);
+    background: var(--concreto);
+    color: var(--tinta);
+    line-height: 1.5;
+}
+ 
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--cobalto); outline-offset: 3px; }
+ 
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+ 
+/* silueta de camiseta hecha solo con CSS (se reemplaza por fotos reales) */
+.camiseta {
+    clip-path: polygon(30% 0, 38% 0, 50% 9%, 62% 0, 70% 0, 100% 18%, 88% 38%, 76% 30%, 76% 100%, 24% 100%, 24% 30%, 12% 38%, 0 18%);
+}
+ 
+/* ---------- 3. HEADER ---------- */
+header { border-bottom: 3px solid var(--tinta); }
+ 
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+.marca { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; text-decoration: none; color: var(--tinta); }
+.marca img {
+    height: 68px;
+    width: auto;
+    display: block;
+}
+.nav a.link { color: var(--blanco); font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
+ 
+/* ---------- 4. HERO ---------- */
+.hero { position: relative; overflow: hidden; padding: 40px 0 0; }
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("BCO.b46b9cf1-3816-4291-b8f0-03fa58657115.png") right center / auto 105% no-repeat;
+    filter: invert(1);
+    mix-blend-mode: screen;
+    opacity: 0.25;
+    z-index: 0;
+}
+.hero h1 {
+    font-weight: 900;
+    font-size: clamp(4.5rem, 20vw, 17rem);
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+    position: relative;
+    z-index: 2;
+}
+ 
+.hero-fila { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding: 30px 0 50px; position: relative; z-index: 2; }
+.hero p { max-width: 380px; font-size: 1.15rem; font-weight: 500; }
+ 
+
+.hero .wrap { position: relative; }
+ 
+.btn {
+    display: inline-block;
+    background: var(--tinta);
+    color: var(--blanco);
+    padding: 16px 32px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 3px solid var(--tinta);
+    transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--rojo); border-color: var(--rojo); }
+ 
+/* ---------- 5. COLECCIÓN ---------- */
+.coleccion { background: var(--blanco); border-top: 3px solid var(--tinta); border-bottom: 3px solid var(--tinta); padding: 70px 0; }
+.coleccion h2, .custom h2 { font-weight: 900; font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: -0.04em; line-height: 1; margin-bottom: 40px; }
+ 
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
+ 
+.producto .foto { aspect-ratio: 1 / 1; background: var(--concreto); display: flex; align-items: center; justify-content: center; border: 3px solid var(--tinta); }
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.producto .camiseta { width: 78%; height: 78%; }
+.c1 { background: var(--tinta); }
+.c2 { background: var(--rojo); }
+.c3 { background: var(--gray); }
+.c4 { background: var(--blanco); outline: 3px solid var(--tinta); outline-offset: -3px; }
+ 
+.producto h3 { font-size: 1.15rem; font-weight: 800; margin-top: 14px; }
+.producto .detalle { color: #555; font-size: 0.92rem; }
+.producto .precio { font-weight: 900; font-size: 1.3rem; margin: 6px 0 12px; }
+.producto .btn { padding: 11px 20px; font-size: 0.95rem; }
+.producto .foto { overflow: hidden; }
+.foto img { transform: scale(1.3); }
+ 
+/* ---------- 6. PERSONALIZADAS ---------- */
+.custom { padding: 80px 0; }
+.custom-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+.custom p { font-size: 1.1rem; margin-bottom: 24px; max-width: 460px; }
+.custom ol { list-style: none; counter-reset: paso; }
+.custom li { counter-increment: paso; border-top: 3px solid var(--tinta); padding: 18px 0; font-weight: 700; font-size: 1.15rem; display: flex; gap: 18px; }
+.custom li::before { content: counter(paso); font-weight: 900; color: var(--gray); font-size: 1.6rem; line-height: 1; }
+.custom li:last-child { border-bottom: 3px solid var(--tinta); }
+ 
+/* ---------- 7. FOOTER ---------- */
+footer { background: var(--tinta); color: var(--blanco); padding: 40px 0; text-align: center; }
+footer a { color: var(--blanco); font-weight: 700; }
+ 
+/* ---------- 8. RESPONSIVE ---------- */
+@media (max-width: 800px) {
+    .custom-flex { grid-template-columns: 1fr; gap: 30px; }
+    .hero-camiseta { right: -20%; top: 14%; width: 80vw; }
+}
+
+/* ---------- PANEL DE MENÚ ---------- */
+:root { --panel: #1c1c1c; }
+
+.btn-menu {
+    background: none;
+    border: 3px solid currentColor;
+    color: inherit;
+    font: inherit;
+    font-weight: 800;
+    padding: 8px 18px;
+    cursor: pointer;
+}
+
+.panel {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: min(380px, 88vw);
+    height: 100vh;
+    background: var(--panel);
+    color: #fff;
+    z-index: 2000;
+    padding: 28px;
+    overflow-y: auto;
+    visibility: hidden;
+    transition: right 0.4s ease, visibility 0.4s;
+}
+.panel.activo { right: 0; visibility: visible; }
+
+.panel-fondo {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1500;
+}
+.panel-fondo.activo { opacity: 1; pointer-events: auto; }
+
+.panel-cabecera { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.panel-cabecera strong { font-weight: 900; font-size: 1.3rem; }
+.cerrar { background: none; border: none; color: #fff; font-size: 2.2rem; line-height: 1; cursor: pointer; }
+
+.panel h3 { font-size: 1rem; color: #aaa; font-weight: 700; margin: 30px 0 10px; }
+
+.panel-menu a {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid #444;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.panel-catalogo a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+.panel-catalogo img { width: 56px; height: 56px; object-fit: cover; border: 2px solid #fff; }
+
+.panel .btn { background: #fff; color: #151515; border-color: #fff; }
+.panel-wsp { display: block; margin-top: 30px; text-align: center; }
+
+.panel a:focus-visible, .panel button:focus-visible, .btn-menu:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .panel, .panel-fondo { transition: none; }
+}
+/* ---------- MÁS MODELOS ---------- */
+.mas { border-top: 0; background: var(--concreto); }
+
+.panel .panel-vermas {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+.panel .panel-vermas:hover { background: #fff; color: #151515; }
+/* ---------- PÁGINA DE MODELOS ---------- */
+.pagina-modelos { border-top: 0; min-height: 70vh; padding-top: 40px; }
+
+.titulo-pagina {
+    font-weight: 900;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 36px;
+}
+
+.volver { display: inline-block; margin-bottom: 18px; font-weight: 700; color: inherit; }
+
+.pagina-modelos .grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px;
+}
+/* ---------- DETALLE DE CAMISETA ---------- */
+.tarjeta-link { display: block; color: inherit; text-decoration: none; }
+.fotos-detalle { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; margin: 24px 0 32px; }
+.fotos-detalle figure { margin: 0; }
+.fotos-detalle img { width: 100%; display: block; border: 3px solid var(--tinta); }
+.fotos-detalle figcaption { font-weight: 700; margin-top: 8px; }
